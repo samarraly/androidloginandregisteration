@@ -8,7 +8,9 @@ import android.database.sqlite.SQLiteOpenHelper;
 import android.util.Log;
 
 import java.util.HashMap;
-
+// Under helper package, create a class named SQLiteHandler.java and paste the below code.
+// This class takes care of storing the user data in SQLite database.
+// Whenever we needs to get the logged in user information, we fetch from SQLite instead of making request to server.
 public class SQLiteHandler extends SQLiteOpenHelper {
 
     private static final String TAG = SQLiteHandler.class.getSimpleName();

@@ -1,61 +1,29 @@
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="guc.edu.androidloginandregisteration.MainActivity" >
+    android:orientation="vertical"
+    tools:context="guc.edu.androidloginandregisteration.MainActivity">
 
-    <LinearLayout
+
+
+    <ListView
+        android:layout_width="match_parent"
+        android:layout_height="420dp"
+        android:id="@+id/lv"
+        android:layout_marginTop="10dp">
+    </ListView>
+
+    <Button
+        android:id="@+id/btnLogout"
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
-        android:layout_centerInParent="true"
-        android:layout_marginLeft="20dp"
-        android:layout_marginRight="20dp"
-        android:gravity="center"
-        android:orientation="vertical">
+        android:layout_marginBottom="20dip"
+        android:background="#D81B60"
+        android:text="@string/btn_logout"
+        android:textColor="#000000" />
 
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="@string/welcome"
-            android:textSize="20dp"
-            android:textColor="#D81B60"/>
 
-        <TextView
-            android:id="@+id/name"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:padding="10dp"
-            android:textColor="#D81B60"
-            android:textSize="24dp" />
-
-        <TextView
-            android:id="@+id/email"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:textSize="13dp" />
-
-        <Button
-            android:id="@+id/btnLogout"
-            android:layout_width="fill_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="40dip"
-            android:background="#000000"
-            android:text="@string/btn_logout"
-            android:textAllCaps="false"
-            android:textColor="#D81B60"
-            android:textSize="15dp" />
-
-        <Button
-            android:id="@+id/mapbutton"
-            android:layout_width="fill_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="40dip"
-            android:background="#000000"
-            android:text="Open the Map "
-            android:textAllCaps="false"
-            android:textColor="#D81B60"
-            android:textSize="15dp" />
-
-    </LinearLayout>
-
-</RelativeLayout>
+</LinearLayout>

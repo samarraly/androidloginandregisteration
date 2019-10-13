@@ -31,6 +31,9 @@ import app.AppConfig;
 import app.AppController;
 
 
+// Create an activity class named LoginActivity.java under activity package. In this class
+//
+//checkLogin() – Method verifies the login details on the server by making the volley http request.
 
 public class LoginActivity extends Activity {
     private static final String TAG = RegisterActivity.class.getSimpleName();
@@ -138,8 +141,7 @@ public class LoginActivity extends Activity {
                         JSONObject user = jObj.getJSONObject("user");
                         String name = user.getString("name");
                         String email = user.getString("email");
-                        String created_at = user
-                                .getString("created_at");
+                        String created_at = user.getString("created_at");
 
                         // Inserting row in users table
                         db.addUser(name, email, uid, created_at);

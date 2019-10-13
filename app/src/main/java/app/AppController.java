@@ -6,6 +6,10 @@ import com.android.volley.Request;
 import com.android.volley.RequestQueue;
 import com.android.volley.toolbox.Volley;
 
+//Under app package, create a class named AppController.java.
+// This class extends from Application which should be executed on app launch.
+// In this class we initiate all the volley core objects.
+
 public class AppController extends Application {
 
     public static final String TAG = AppController.class.getSimpleName();

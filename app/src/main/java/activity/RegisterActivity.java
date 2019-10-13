@@ -1,4 +1,9 @@
 package activity;
+// Create an activity class named RegisterActivity.java under activity package.
+//
+//registerUser() – Will store the user by passing name, email and password to php,mysql server.
+//
+//db.addUser() – Will insert the user in SQLite database once he is successfully registered.
 
 import android.app.Activity;
 import android.app.ProgressDialog;
@@ -130,6 +135,8 @@ public class RegisterActivity extends Activity {
 
         pDialog.setMessage("Registering ...");
         showDialog();
+
+
 
         StringRequest strReq = new StringRequest(Method.POST,
                 AppConfig.URL_REGISTER, new Response.Listener<String>() {
