@@ -22,13 +22,14 @@ import org.json.JSONObject;
 import java.util.HashMap;
 import java.util.Map;
 
+import app.AppConfig;
+import app.AppController;
+import guc.edu.androidloginandregisteration.MainActivity;
 import guc.edu.loginandregistration.R;
 import helper.SQLiteHandler;
 import helper.SessionManager;
+
 //import info.androidhive.loginandregistration.R;
-import guc.edu.androidloginandregisteration.MainActivity;
-import app.AppConfig;
-import app.AppController;
 
 
 // Create an activity class named LoginActivity.java under activity package. In this class
@@ -44,6 +45,7 @@ public class LoginActivity extends Activity {
     private ProgressDialog pDialog;
     private SessionManager session;
     private SQLiteHandler db;
+    public long user_id;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -138,18 +140,23 @@ public class LoginActivity extends Activity {
                         // Now store the user in SQLite
                         String uid = jObj.getString("uid");
 
+
                         JSONObject user = jObj.getJSONObject("user");
                         String name = user.getString("name");
                         String email = user.getString("email");
                         String created_at = user.getString("created_at");
+                       // String id =user.getString("id");
 
                         // Inserting row in users table
-                        db.addUser(name, email, uid, created_at);
+                      //db.addUser(name, email, uid, created_at);
+                     //  Log.d("user_id",">>"+id);
 
                         // Launch main activity
                         Intent intent = new Intent(LoginActivity.this,
                                 MainActivity.class);
                         startActivity(intent);
+                       //intent.putExtra("user_id",uid);
+                       // Log.d("user_id1",">>"+uid);
                         finish();
                     } else {
                         // Error in login. Get the error message

@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="guc.edu.androidloginandregisteration.detailsActivity"
+    android:background="#D1D0CE"
+    android:gravity="center"
+    android:orientation="vertical"
+    android:padding="10dp" >
+
+    <LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="match_parent"
+        android:layout_gravity="center"
+        android:orientation="vertical"
+        android:paddingLeft="10dp"
+        android:paddingRight="20dp">
+
+
+        <TextView
+            android:id="@+id/reviews_car"
+            android:layout_width="109dp"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="10dp"
+            android:padding="10dp"
+            android:singleLine="true"
+            android:text="Reviews"
+            android:textColor="#000000"
+            android:textColorHint="#000000"
+            android:textStyle="bold" />
+
+        <!-- Login Button -->
+        <ListView
+            android:id="@+id/reviews_list"
+            android:layout_width="wrap_content"
+            android:layout_height="477dp" />
+
+
+    </LinearLayout>
+
+</LinearLayout>

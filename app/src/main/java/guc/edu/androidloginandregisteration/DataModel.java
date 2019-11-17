@@ -2,6 +2,7 @@ package guc.edu.androidloginandregisteration;
 
 public class DataModel {
     private String carname, fuellevel, production_year, imgURL,latitude,longitude;
+    private String id;
     private float distance;
 
 
@@ -9,53 +10,78 @@ public class DataModel {
         return imgURL;
     }
 
+    public void setId(String id) {
+        this.id = id;
+    }
+
+//
+   public String getId() {
+        return id;
+    }
+
+
     public void setImgURL(String imgURL){
         this.imgURL = imgURL;
     }
 
-    public String getName() {
+    public String getName()
+    {
         return carname;
     }
 
-    public void setName(String carname) {
+    public void setName(String carname)
+    {
         this.carname = carname;
     }
 
-    public void setLongitude(String longitude) {
+    public void setLongitude(String longitude)
+    {
         this.longitude = longitude;
     }
-    public void setLatitude(String latitude) {
+
+    public void setLatitude(String latitude)
+    {
         this.latitude = latitude;
     }
-    public String getLatitude() {
+
+    public String getLatitude()
+    {
         return latitude;
     }
 
-    public String getLongitude() {
+    public String getLongitude()
+    {
         return longitude;
     }
-    public String getFuellevel() {
+
+    public String getFuellevel()
+    {
         return fuellevel;
     }
 
-    public void setFuellevel(String fuellevel) {
+    public void setFuellevel(String fuellevel)
+    {
         this.fuellevel = fuellevel;
     }
 
-    public String getProduction_year() {
+    public String getProduction_year()
+    {
         return production_year;
     }
 
-    public void setProduction_year(String production_year) {
+    public void setProduction_year(String production_year)
+    {
         this.production_year = production_year;
     }
 
-    public float getdistance (){
+    public float getdistance ()
+    {
         return distance;
 
     }
 
-    public void setdistance(float distance){
+    public void setdistance(float distance)
+    {
         this.distance=distance;
     }
 }

@@ -1,6 +1,6 @@
 package guc.edu.androidloginandregisteration;
+
 import android.content.Context;
-import android.location.Location;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -8,12 +8,12 @@ import android.view.ViewGroup;
 import android.widget.BaseAdapter;
 import android.widget.ImageView;
 import android.widget.TextView;
+
 import com.squareup.picasso.Picasso;
+
 import java.util.ArrayList;
 
 import guc.edu.loginandregistration.R;
-
-import static java.lang.Double.parseDouble;
 
 public class CustomAdapter extends BaseAdapter {
 
@@ -61,7 +61,6 @@ public class CustomAdapter extends BaseAdapter {
             LayoutInflater inflater = (LayoutInflater) context
                     .getSystemService(Context.LAYOUT_INFLATER_SERVICE);
             convertView = inflater.inflate(R.layout.customlistview, null, true);
-
             holder.iv = (ImageView) convertView.findViewById(R.id.iv_image);
             holder.vechilename = (TextView) convertView.findViewById(R.id.car_name);
             holder.Vechilefuellevel = (TextView) convertView.findViewById(R.id.car_fuel);
@@ -77,19 +76,13 @@ public class CustomAdapter extends BaseAdapter {
 
         Picasso.get().load(dataModelArrayList.get(position).getImgURL()).into(holder.iv);
 
-
         holder.vechilename.setText("Name: "+dataModelArrayList.get(position).getName());
-        holder.Vechilefuellevel.setText("Fuel_Level: "+dataModelArrayList.get(position).getFuellevel());
+        holder.Vechilefuellevel.setText("Fuel Level: "+dataModelArrayList.get(position).getFuellevel());
         Log.d("distancecustom",">>" +dataModelArrayList.get(position).getdistance());
 
         holder.vechile_distance.setText("Distance:"+dataModelArrayList.get(position).getdistance()+" Km");
 
         holder.vechile_production_year.setText("Production Year: "+dataModelArrayList.get(position).getProduction_year());
-
-
-
-
-
 
         return convertView;
     }

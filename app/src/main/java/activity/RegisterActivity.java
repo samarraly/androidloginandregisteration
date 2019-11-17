@@ -26,13 +26,14 @@ import org.json.JSONObject;
 import java.util.HashMap;
 import java.util.Map;
 
+import app.AppConfig;
+import app.AppController;
+import guc.edu.androidloginandregisteration.MainActivity;
 import guc.edu.loginandregistration.R;
 import helper.SQLiteHandler;
 import helper.SessionManager;
+
 //import info.androidhive.loginandregistration.R;
-import guc.edu.androidloginandregisteration.MainActivity;
-import app.AppConfig;
-import app.AppController;
 //import info.androidhive.loginandregistration.app.AppConfig;
 //import info.androidhive.loginandregistration.app.AppController;
 //import info.androidhive.loginandregistration.helper.SQLiteHandler;
@@ -77,6 +78,8 @@ public class RegisterActivity extends Activity {
         // SQLite database handler
         db = new SQLiteHandler(getApplicationContext());
 
+
+
         // Check if user is already logged in or not
         if (session.isLoggedIn()) {
             // User is already logged in. Take him to main activity
@@ -84,6 +87,8 @@ public class RegisterActivity extends Activity {
                     MainActivity.class);
             startActivity(intent);
             finish();
+           // intent.putExtra("user_id",id);
+
         }
 
         // Register Button Click event
@@ -153,13 +158,15 @@ public class RegisterActivity extends Activity {
                         // User successfully stored in MySQL
                         // Now store the user in sqlite
                         String uid = jObj.getString("uid");
+                        String id = jObj.getString("id");
+
 
                         JSONObject user = jObj.getJSONObject("user");
                         String name = user.getString("name");
                         String email = user.getString("email");
                         String created_at = user.getString("created_at");
                          // Inserting row in users table
-                        db.addUser(name, email, uid, created_at);
+                        db.addUser(id , name, email, uid, created_at);
 
                         Toast.makeText(getApplicationContext(), "User successfully registered. Try login now!", Toast.LENGTH_LONG).show();
 

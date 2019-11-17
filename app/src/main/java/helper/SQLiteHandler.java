@@ -8,6 +8,7 @@ import android.database.sqlite.SQLiteOpenHelper;
 import android.util.Log;
 
 import java.util.HashMap;
+
 // Under helper package, create a class named SQLiteHandler.java and paste the below code.
 // This class takes care of storing the user data in SQLite database.
 // Whenever we needs to get the logged in user information, we fetch from SQLite instead of making request to server.
@@ -24,7 +25,7 @@ public class SQLiteHandler extends SQLiteOpenHelper {
 
     // Login table name
     private static final String TABLE_USER = "user";
-
+long id;
     // Login Table Columns names
     private static final String KEY_ID = "id";
     private static final String KEY_NAME = "name";
@@ -58,20 +59,25 @@ public class SQLiteHandler extends SQLiteOpenHelper {
         onCreate(db);
     }
 
+
+
     /**
      * Storing user details in database
      * */
-    public void addUser(String name, String email, String uid, String created_at) {
+    public void addUser(String id , String name, String email, String uid, String created_at) {
         SQLiteDatabase db = this.getWritableDatabase();
 
         ContentValues values = new ContentValues();
+        values.put(KEY_ID, id); // id
         values.put(KEY_NAME, name); // Name
         values.put(KEY_EMAIL, email); // Email
         values.put(KEY_UID, uid); // Email
         values.put(KEY_CREATED_AT, created_at); // Created At
 
         // Inserting Row
-        long id = db.insert(TABLE_USER, null, values);
+        db.insert(TABLE_USER, null, values);
+        //long  id = db.insert(TABLE_USER, null, values);
+      // Log.d("sql id", String.valueOf(id));
         db.close(); // Closing database connection
 
         Log.d(TAG, "New user inserted into sqlite: " + id);
@@ -89,10 +95,12 @@ public class SQLiteHandler extends SQLiteOpenHelper {
         // Move to first row
         cursor.moveToFirst();
         if (cursor.getCount() > 0) {
+            user.put("id", cursor.getString(0));
             user.put("name", cursor.getString(1));
             user.put("email", cursor.getString(2));
             user.put("uid", cursor.getString(3));
             user.put("created_at", cursor.getString(4));
+
         }
         cursor.close();
         db.close();

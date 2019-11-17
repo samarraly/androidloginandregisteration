@@ -10,7 +10,6 @@ import android.support.annotation.NonNull;
 import android.support.v4.app.ActivityCompat;
 import android.support.v4.content.ContextCompat;
 import android.support.v7.app.AppCompatActivity;
-import android.support.v7.widget.Toolbar;
 import android.util.Log;
 import android.widget.Toast;
 
@@ -71,6 +70,13 @@ public class MapActivity extends AppCompatActivity implements
             return;
         }
         mMap.setMyLocationEnabled(true);
+     //   mMap.setOnMapLongClickListener(new GoogleMap.OnMapLongCl*ickListener() {
+        //    @Override
+       //     public void onMapLongClick(LatLng latLng) {
+                //Reset on marker when already 2
+              //  if (listPoints.size()==2)
+         //   }
+       // });
         mMap.getUiSettings().setMyLocationButtonEnabled(true);
         mMap.moveCamera(CameraUpdateFactory.newLatLngZoom(location,15));
 

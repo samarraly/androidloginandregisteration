@@ -4,6 +4,7 @@ import android.content.Context;
 import android.content.SharedPreferences;
 import android.content.SharedPreferences.Editor;
 import android.util.Log;
+
 //Under helper package, create a class named SessionManager.java and add below code.
 // This class maintains session data across the app using the SharedPreferences.
 // We store a boolean flag isLoggedIn in shared preferences to check the login status.

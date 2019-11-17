@@ -1,12 +1,14 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:layout_width="fill_parent"
-    android:layout_height="fill_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="guc.edu.androidloginandregisteration.carActivity"
     android:background="#D1D0CE"
     android:gravity="center"
     android:orientation="vertical"
     android:padding="10dp" >
-
     <LinearLayout
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
@@ -15,55 +17,68 @@
         android:paddingLeft="20dp"
         android:paddingRight="20dp" >
 
-        <EditText
-            android:id="@+id/email"
+
+        <TextView
+            android:id="@+id/Model_name"
+            android:layout_width="138dp"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="10dp"
+            android:padding="10dp"
+            android:text="Model Name"
+            android:textStyle="bold"
+            android:singleLine="true"
+            android:textColor="#000000"
+            android:textColorHint="#000000"
+            />
+
+        <TextView
+            android:id="@+id/car_name"
             android:layout_width="fill_parent"
             android:layout_height="wrap_content"
             android:layout_marginBottom="10dp"
-            android:background="@drawable/edittext_style"
-            android:hint="@string/hint_email"
-            android:inputType="textEmailAddress"
             android:padding="10dp"
             android:singleLine="true"
             android:textColor="#000000"
             android:textColorHint="#000000" />
 
-        <EditText
-            android:id="@+id/password"
-            android:layout_width="fill_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginBottom="10dp"
-            android:background="@drawable/edittext_style"
-            android:hint="@string/hint_password"
-            android:inputType="textPassword"
-            android:padding="10dp"
-            android:singleLine="true"
-            android:textColor="#000000"
-            android:textColorHint="#000000" />
 
-        <!-- Login Button -->
 
         <Button
-            android:id="@+id/btnLogin"
+            android:id="@+id/show_reviews"
             android:layout_width="fill_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="20dip"
             android:background="@drawable/button_edit"
-            android:text="@string/btn_login"
+            android:text="Show the reviews"
             android:textColor="#000000" />
 
-        <!-- Link to Login Screen -->
+
 
         <Button
-            android:id="@+id/btnLinkToRegisterScreen"
+            android:id="@+id/submit_review"
             android:layout_width="fill_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="40dip"
             android:background="@drawable/button_edit"
-            android:text="@string/btn_link_to_register"
+            android:text="Enter a Review"
             android:textAllCaps="false"
             android:textColor="#000000"
             android:textSize="15dp" />
+
+        <Button
+            android:id="@+id/navigate"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="40dip"
+            android:background="@drawable/button_edit"
+            android:text="Go to The Map"
+            android:textAllCaps="false"
+            android:textColor="#000000"
+            android:textSize="15dp" />
+
+
+
+
 
     </LinearLayout>
 
